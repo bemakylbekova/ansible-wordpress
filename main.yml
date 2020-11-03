@@ -17,6 +17,15 @@
     reboot: 
       reboot_timeout: 600     
     when: yum.changed or selinux.changed
+
   - name: Install PHP
     include_tasks: php.yml    
 
+  - name: Install Apache
+    include_tasks: apache.yml  
+
+  - name: Install Wordpress
+    include_tasks: wordpress.yml
+
+  - name: Install MySQL
+    include_tasks: mysql.yml  
